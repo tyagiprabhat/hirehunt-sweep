@@ -1,0 +1,76 @@
+# The daily job sweep: collect and send to the Cloudflare Worker. Zero cost (CLAUDE.md): no LLM API here.
+# Rows arrive 'Not judged' and stay hidden on /jobs until the morning Claude Code session judges and
+# ranks them (harvest/MORNING.md), which starts after this run and waits for it.
+# harvest/pull.py brings them into the Excel Master on the laptop.
+#
+# Repository secrets (Settings > Secrets and variables > Actions):
+#   HARVEST_API        the Worker's address, e.g. https://hirehunt.iprabhattyagi.workers.dev
+#   HARVEST_TOKEN      the same value as the Worker's HARVEST_TOKEN secret
+name: Daily job sweep
+
+on:
+  schedule:
+    - cron: "30 1 * * *"   # 01:30 UTC (02:30 / 03:30 Paris): all of France takes up to ~3 h, done before the 7:00 list
+  workflow_dispatch:
+    inputs:
+      region:
+        description: "idf, exidf, all, france or directory"
+        default: "all"
+      quick:
+        description: "Smoke test: fewer phrases and pages"
+        type: boolean
+        default: false
+
+concurrency:
+  group: daily-sweep
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # the sweep-latest hand-off branch
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      HARVEST_API: https://hirehunt.iprabhattyagi.workers.dev   # the live Worker (renamed from cv-builder, 2026-10-22)
+      HARVEST_TOKEN: ${{ secrets.HARVEST_TOKEN }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # Seconds, not the six minutes of a collect, to learn the two token secrets disagree.
+      - name: Check the Worker accepts the token
+        run: python -c "import sys; sys.path.insert(0, 'harvest'); import remote; assert remote.enabled(), 'HARVEST_API or HARVEST_TOKEN secret missing'; print(len(remote.seen()), 'postings and applications already known')"
+      - name: Collect (no LLM tokens)
+        run: >
+          python harvest/collect.py --region "${{ inputs.region || 'all' }}"
+          ${{ inputs.quick && '--quick' || '' }}
+      - name: Find this run's folder
+        run: echo "OUT=$(ls -d harvest/out/*/ | sort | tail -1)" >> "$GITHUB_ENV"
+      - name: Send to the Worker
+        run: python harvest/push.py "$OUT"
+      # The 7:00 Claude Code session (harvest/MORNING.md) judges and ranks from this. One orphan commit,
+      # force-pushed, so the branch never grows: candidates.json for push.py, judge_input for the judge.
+      - name: Hand the run to the morning session (branch sweep-latest)
+        run: |
+          dir=$(basename "$OUT")
+          mkdir -p /tmp/hand/"$dir"
+          gzip -c "$OUT/candidates.json" > /tmp/hand/"$dir"/candidates.json.gz
+          cp "$OUT/judge_input.jsonl" /tmp/hand/"$dir"/
+          cd /tmp/hand
+          git init -q -b sweep-latest
+          git add -A
+          git -c user.name=sweep -c user.email=sweep@users.noreply.github.com commit -q -m "sweep $dir"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sweep-latest
+      - name: Keep the run's files for a week
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sweep-${{ github.run_id }}
+          path: harvest/out/
+          retention-days: 7

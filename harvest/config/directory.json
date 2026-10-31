@@ -1,0 +1,1706 @@
+{
+ "_doc": "French multinationals directory (257 companies, user-supplied 2026-10-06). Companies already in targets.json are omitted. Swept by collect.py --region directory.",
+ "companies": [
+  {
+   "company": "Accenture France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Consulting",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Adidas France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Sporting Goods",
+   "city": "Landersheim",
+   "region": "Grand Est"
+  },
+  {
+   "company": "AG2R La Mondiale",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Agrial",
+   "category": "Cooperative / Mutual",
+   "industry": "Food / Agriculture",
+   "city": "Caen",
+   "region": "Normandie"
+  },
+  {
+   "company": "Air France-KLM",
+   "category": "French Listed Multinational",
+   "industry": "Aviation",
+   "city": "Tremblay-en-France",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Airbus",
+   "category": "French Listed Multinational",
+   "industry": "Aerospace",
+   "city": "Blagnac",
+   "region": "Occitanie"
+  },
+  {
+   "company": "Airbus Helicopters",
+   "category": "Subsidiary of French Group",
+   "industry": "Aerospace",
+   "city": "Marignane",
+   "region": "Provence-Alpes-Côte d'Azur"
+  },
+  {
+   "company": "Alcatel-Lucent Enterprise",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Telecom Equipment",
+   "city": "Colombes",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Allianz France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Insurance",
+   "city": "Puteaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Alpine (Renault Group)",
+   "category": "Subsidiary of French Group",
+   "industry": "Automotive",
+   "city": "Viry-Châtillon",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Alten",
+   "category": "French Listed Multinational",
+   "industry": "IT / Engineering Services",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Amundi",
+   "category": "French Listed Multinational",
+   "industry": "Asset Management",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Andros",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Biars-sur-Cère",
+   "region": "Occitanie"
+  },
+  {
+   "company": "Apple France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Consumer Electronics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "ArcelorMittal",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Steel Manufacturing",
+   "city": "Saint-Denis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "ArianeGroup",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Space & Defence",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Arkema",
+   "category": "French Listed Multinational",
+   "industry": "Chemicals",
+   "city": "Colombes",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "AstraZeneca France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Pharmaceuticals",
+   "city": "Courbevoie / Dunkerque",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Atalian",
+   "category": "Private / Family Group",
+   "industry": "Facilities Services",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Auchan",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Croix",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Avril Group",
+   "category": "Cooperative / Mutual",
+   "industry": "Oils & Proteins",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "AXA",
+   "category": "French Listed Multinational",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Babolat",
+   "category": "Mid-Cap Multinational",
+   "industry": "Sporting Goods",
+   "city": "Lyon",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Bic",
+   "category": "French Listed Multinational",
+   "industry": "Stationery & Consumer Goods",
+   "city": "Clichy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Biocodex",
+   "category": "Private / Family Group",
+   "industry": "Pharmaceuticals",
+   "city": "Gentilly",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "bioMérieux",
+   "category": "French Listed Multinational",
+   "industry": "Diagnostics",
+   "city": "Marcy-l'Étoile",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "BMW France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Automotive",
+   "city": "Montigny-le-Bretonneux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "BNP Paribas",
+   "category": "French Listed Multinational",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Boiron",
+   "category": "French Listed Multinational",
+   "industry": "Homeopathy",
+   "city": "Messimy",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Bolloré",
+   "category": "Private / Family Group",
+   "industry": "Logistics & Media",
+   "city": "Puteaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Bonduelle",
+   "category": "French Listed Multinational",
+   "industry": "Vegetables / Food",
+   "city": "Villeneuve-d'Ascq",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Bosch France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Industrial / Automotive",
+   "city": "Saint-Ouen-sur-Seine",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Boulanger",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Lesquin",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Bouygues",
+   "category": "French Listed Multinational",
+   "industry": "Conglomerate",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Bouygues Construction",
+   "category": "Subsidiary of French Group",
+   "industry": "Construction",
+   "city": "Guyancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Bouygues Telecom",
+   "category": "Subsidiary of French Group",
+   "industry": "Telecommunications",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Bridor",
+   "category": "Private / Family Group",
+   "industry": "Bakery",
+   "city": "Servon-sur-Vilaine",
+   "region": "Bretagne"
+  },
+  {
+   "company": "Bugatti",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Automotive",
+   "city": "Molsheim",
+   "region": "Grand Est"
+  },
+  {
+   "company": "Bureau Veritas",
+   "category": "French Listed Multinational",
+   "industry": "Testing & Certification",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Caisse des Dépôts",
+   "category": "State-Owned",
+   "industry": "Financial Institution",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Canal+",
+   "category": "French Listed Multinational",
+   "industry": "Media",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Capgemini",
+   "category": "French Listed Multinational",
+   "industry": "IT Consulting",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Carrefour",
+   "category": "French Listed Multinational",
+   "industry": "Retail",
+   "city": "Massy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Cartier",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Casino Guichard-Perrachon",
+   "category": "French Listed Multinational",
+   "industry": "Retail",
+   "city": "Saint-Étienne",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Castorama",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Retail / DIY",
+   "city": "Templemars",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Caudalie",
+   "category": "Private / Family Group",
+   "industry": "Cosmetics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Cdiscount",
+   "category": "Subsidiary of French Group",
+   "industry": "E-commerce",
+   "city": "Bordeaux",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "Ceva Santé Animale",
+   "category": "Private / Family Group",
+   "industry": "Animal Health",
+   "city": "Libourne",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "Chanel",
+   "category": "Private / Family Group",
+   "industry": "Luxury Goods",
+   "city": "Neuilly-sur-Seine",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Christian Louboutin",
+   "category": "Private / Family Group",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "CIC",
+   "category": "Subsidiary of French Group",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Clariane (ex-Korian)",
+   "category": "French Listed Multinational",
+   "industry": "Healthcare / Care Homes",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Clarins",
+   "category": "Private / Family Group",
+   "industry": "Cosmetics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Club Med",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Tourism",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "CMA CGM",
+   "category": "Private / Family Group",
+   "industry": "Shipping & Logistics",
+   "city": "Marseille",
+   "region": "Provence-Alpes-Côte d'Azur"
+  },
+  {
+   "company": "CNP Assurances",
+   "category": "Subsidiary of French Group",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Coca-Cola France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Beverages",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Colas",
+   "category": "Subsidiary of French Group",
+   "industry": "Roads & Infrastructure",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Compagnie des Alpes",
+   "category": "French Listed Multinational",
+   "industry": "Leisure Parks / Ski",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Constellium",
+   "category": "French Listed Multinational",
+   "industry": "Aluminium",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Covéa",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Crédit Agricole",
+   "category": "French Listed Multinational",
+   "industry": "Banking",
+   "city": "Montrouge",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Crédit Mutuel",
+   "category": "Cooperative / Mutual",
+   "industry": "Banking",
+   "city": "Strasbourg",
+   "region": "Grand Est"
+  },
+  {
+   "company": "Cristal Union",
+   "category": "Cooperative / Mutual",
+   "industry": "Sugar",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Daher",
+   "category": "Private / Family Group",
+   "industry": "Aerospace & Logistics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Danone",
+   "category": "French Listed Multinational",
+   "industry": "Food Processing",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Dassault Aviation",
+   "category": "French Listed Multinational",
+   "industry": "Aerospace & Defense",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Dassault Systèmes",
+   "category": "French Listed Multinational",
+   "industry": "Software",
+   "city": "Vélizy-Villacoublay",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Decathlon",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Villeneuve-d'Ascq",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Dell Technologies France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "IT Hardware",
+   "city": "Bezons",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "DHL France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Logistics",
+   "city": "Le Bourget / Roissy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Dior",
+   "category": "French Listed Multinational",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Disneyland Paris",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Leisure & Tourism",
+   "city": "Chessy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Edenred",
+   "category": "French Listed Multinational",
+   "industry": "Payments / Employee Benefits",
+   "city": "Malakoff",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "EDF",
+   "category": "State-Owned",
+   "industry": "Energy",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Egis",
+   "category": "State-Owned",
+   "industry": "Engineering",
+   "city": "Montreuil",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Eiffage",
+   "category": "French Listed Multinational",
+   "industry": "Construction",
+   "city": "Vélizy-Villacoublay",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Elior",
+   "category": "French Listed Multinational",
+   "industry": "Contract Catering",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Elsan",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Private Hospitals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Emeis (ex-Orpea)",
+   "category": "French Listed Multinational",
+   "industry": "Healthcare / Care Homes",
+   "city": "Puteaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Enedis",
+   "category": "Subsidiary of French Group",
+   "industry": "Electricity Distribution",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Engie",
+   "category": "French Listed Multinational",
+   "industry": "Energy",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Eramet",
+   "category": "French Listed Multinational",
+   "industry": "Mining & Metals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Ericsson France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Telecommunications",
+   "city": "Massy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "EssilorLuxottica",
+   "category": "French Listed Multinational",
+   "industry": "Medical Devices / Eyewear",
+   "city": "Charenton-le-Pont",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Eurazeo",
+   "category": "French Listed Multinational",
+   "industry": "Investment",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Europcar Mobility Group",
+   "category": "French Listed Multinational",
+   "industry": "Car Rental",
+   "city": "Montigny-le-Bretonneux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Eurovia",
+   "category": "Subsidiary of French Group",
+   "industry": "Roads & Infrastructure",
+   "city": "Rueil-Malmaison",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Eutelsat",
+   "category": "French Listed Multinational",
+   "industry": "Satellite Telecom",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Fayat",
+   "category": "Private / Family Group",
+   "industry": "Construction",
+   "city": "Bordeaux",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "Ferrero France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Food Processing",
+   "city": "Mont-Saint-Aignan",
+   "region": "Normandie"
+  },
+  {
+   "company": "Fleury Michon",
+   "category": "French Listed Multinational",
+   "industry": "Food Processing",
+   "city": "Pouzauges",
+   "region": "Pays de la Loire"
+  },
+  {
+   "company": "FM Logistic",
+   "category": "Private / Family Group",
+   "industry": "Logistics",
+   "city": "Phalsbourg",
+   "region": "Grand Est"
+  },
+  {
+   "company": "Fnac Darty",
+   "category": "French Listed Multinational",
+   "industry": "Retail",
+   "city": "Ivry-sur-Seine",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Forvia",
+   "category": "French Listed Multinational",
+   "industry": "Automotive Parts",
+   "city": "Nanterre",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Framatome",
+   "category": "Subsidiary of French Group",
+   "industry": "Nuclear",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "France Télévisions",
+   "category": "State-Owned",
+   "industry": "Media",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Galeries Lafayette",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Generali France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Geodis",
+   "category": "Subsidiary of French Group",
+   "industry": "Logistics",
+   "city": "Levallois-Perret",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Getlink (Eurotunnel)",
+   "category": "French Listed Multinational",
+   "industry": "Transport Infrastructure",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Google France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Internet & Tech",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "GRDF",
+   "category": "Subsidiary of French Group",
+   "industry": "Gas Distribution",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupama",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe ADP",
+   "category": "French Listed Multinational",
+   "industry": "Airports",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe Bel",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Suresnes",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe Bigard",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Quimperlé",
+   "region": "Bretagne"
+  },
+  {
+   "company": "Groupe BPCE",
+   "category": "Cooperative / Mutual",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe Dassault (GIMD)",
+   "category": "Private / Family Group",
+   "industry": "Industrial Holding",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe E.Leclerc",
+   "category": "Cooperative / Mutual",
+   "industry": "Retail",
+   "city": "Ivry-sur-Seine",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Groupe LDC",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Sablé-sur-Sarthe",
+   "region": "Pays de la Loire"
+  },
+  {
+   "company": "Groupe Rocher",
+   "category": "Private / Family Group",
+   "industry": "Cosmetics",
+   "city": "La Gacilly",
+   "region": "Bretagne"
+  },
+  {
+   "company": "GSK France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Pharmaceuticals",
+   "city": "Marly-le-Roi",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Guerbet",
+   "category": "French Listed Multinational",
+   "industry": "Medical Imaging",
+   "city": "Villepinte",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "H&M France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Retail",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Havas",
+   "category": "Subsidiary of French Group",
+   "industry": "Advertising",
+   "city": "Puteaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Heineken France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Beverages",
+   "city": "Schiltigheim",
+   "region": "Grand Est"
+  },
+  {
+   "company": "Henkel France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Consumer & Industrial Goods",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Hermès",
+   "category": "French Listed Multinational",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "HP France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "IT Hardware",
+   "city": "Les Ulis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "HSBC Continental Europe",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "IBM France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "IT Services",
+   "city": "Bois-Colombes",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "IKEA France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Retail",
+   "city": "Plaisir",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Iliad",
+   "category": "Private / Family Group",
+   "industry": "Telecommunications",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Imerys",
+   "category": "French Listed Multinational",
+   "industry": "Minerals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Inditex France (Zara)",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Retail",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Institut Mérieux",
+   "category": "Private / Family Group",
+   "industry": "Healthcare & Diagnostics",
+   "city": "Lyon",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "InVivo",
+   "category": "Cooperative / Mutual",
+   "industry": "Agriculture",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Ipsen",
+   "category": "French Listed Multinational",
+   "industry": "Pharmaceuticals",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Ipsos",
+   "category": "French Listed Multinational",
+   "industry": "Market Research",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "JCDecaux",
+   "category": "French Listed Multinational",
+   "industry": "Outdoor Advertising",
+   "city": "Neuilly-sur-Seine",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Keolis",
+   "category": "Subsidiary of French Group",
+   "industry": "Public Transport",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Kering",
+   "category": "French Listed Multinational",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Kiabi",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Lesquin",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Klépierre",
+   "category": "French Listed Multinational",
+   "industry": "Real Estate",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "KNDS France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Land Defence",
+   "city": "Versailles",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "L'Oréal",
+   "category": "French Listed Multinational",
+   "industry": "Consumer Goods / Cosmetics",
+   "city": "Clichy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "La Banque Postale",
+   "category": "Subsidiary of French Group",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "La Poste",
+   "category": "State-Owned",
+   "industry": "Logistics & Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Lacoste",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Apparel",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Lactalis",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Laval",
+   "region": "Pays de la Loire"
+  },
+  {
+   "company": "Lafuma",
+   "category": "French Listed Multinational",
+   "industry": "Outdoor / Sporting Goods",
+   "city": "Anneyron",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Lagardère",
+   "category": "French Listed Multinational",
+   "industry": "Media & Publishing",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Latécoère",
+   "category": "French Listed Multinational",
+   "industry": "Aerostructures",
+   "city": "Toulouse",
+   "region": "Occitanie"
+  },
+  {
+   "company": "Legrand",
+   "category": "French Listed Multinational",
+   "industry": "Electrical Equipment",
+   "city": "Limoges",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "Leroy Merlin",
+   "category": "Private / Family Group",
+   "industry": "Retail",
+   "city": "Lezennes",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Les Mousquetaires (Intermarché)",
+   "category": "Cooperative / Mutual",
+   "industry": "Retail",
+   "city": "Bondoufle",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Lesaffre",
+   "category": "Private / Family Group",
+   "industry": "Yeast & Fermentation",
+   "city": "Marcq-en-Barœul",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Lidl France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Retail",
+   "city": "Rungis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Limagrain",
+   "category": "Cooperative / Mutual",
+   "industry": "Agriculture",
+   "city": "Saint-Beauzire",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Longchamp",
+   "category": "Private / Family Group",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Louis Vuitton",
+   "category": "Subsidiary of French Group",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "LVMH",
+   "category": "French Listed Multinational",
+   "industry": "Luxury Goods",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Macif",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance",
+   "city": "Niort",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "MAIF",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance",
+   "city": "Niort",
+   "region": "Nouvelle-Aquitaine"
+  },
+  {
+   "company": "Malakoff Humanis",
+   "category": "Cooperative / Mutual",
+   "industry": "Insurance / Pensions",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Manitou Group",
+   "category": "French Listed Multinational",
+   "industry": "Handling Equipment",
+   "city": "Ancenis",
+   "region": "Pays de la Loire"
+  },
+  {
+   "company": "MBDA France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Missiles / Defence",
+   "city": "Le Plessis-Robinson",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "McDonald's France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Food Service",
+   "city": "Guyancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Mercedes-Benz France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Automotive",
+   "city": "Montigny-le-Bretonneux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Mersen",
+   "category": "French Listed Multinational",
+   "industry": "Electrical Materials",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Meta France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Internet & Tech",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Microsoft France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Software & Cloud",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Moët Hennessy",
+   "category": "Subsidiary of French Group",
+   "industry": "Wines & Spirits",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Monoprix",
+   "category": "Subsidiary of French Group",
+   "industry": "Retail",
+   "city": "Clichy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "MSD France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Pharmaceuticals",
+   "city": "Puteaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Natixis",
+   "category": "Subsidiary of French Group",
+   "industry": "Banking",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Naval Group",
+   "category": "State-Owned",
+   "industry": "Naval Defence",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Neoen",
+   "category": "French Listed Multinational",
+   "industry": "Renewable Energy",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Nestlé France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Food Processing",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Nexans",
+   "category": "French Listed Multinational",
+   "industry": "Cables",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Nokia France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Telecom Equipment",
+   "city": "Nozay",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Nuxe",
+   "category": "Private / Family Group",
+   "industry": "Cosmetics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Onet",
+   "category": "Private / Family Group",
+   "industry": "Cleaning & Services",
+   "city": "Marseille",
+   "region": "Provence-Alpes-Côte d'Azur"
+  },
+  {
+   "company": "OPmobility (Plastic Omnium)",
+   "category": "French Listed Multinational",
+   "industry": "Automotive Parts",
+   "city": "Levallois-Perret",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Orange",
+   "category": "French Listed Multinational",
+   "industry": "Telecommunications",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Orangina Schweppes",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Beverages",
+   "city": "Levallois-Perret",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Orano",
+   "category": "State-Owned",
+   "industry": "Nuclear Fuel Cycle",
+   "city": "Châtillon",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "OVHcloud",
+   "category": "French Listed Multinational",
+   "industry": "Cloud Computing",
+   "city": "Roubaix",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Panzani",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Food Processing",
+   "city": "Lyon",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Pernod Ricard",
+   "category": "French Listed Multinational",
+   "industry": "Wines & Spirits",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Petzl",
+   "category": "Private / Family Group",
+   "industry": "Outdoor Equipment",
+   "city": "Crolles",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Peugeot (Stellantis)",
+   "category": "French Listed Multinational",
+   "industry": "Automotive",
+   "city": "Poissy",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Pfizer France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Pharmaceuticals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Pierre & Vacances-Center Parcs",
+   "category": "French Listed Multinational",
+   "industry": "Tourism",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Pierre Fabre",
+   "category": "Private / Family Group",
+   "industry": "Pharmaceuticals",
+   "city": "Castres",
+   "region": "Occitanie"
+  },
+  {
+   "company": "Poclain Hydraulics",
+   "category": "Private / Family Group",
+   "industry": "Hydraulics",
+   "city": "Verberie",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Publicis Groupe",
+   "category": "French Listed Multinational",
+   "industry": "Advertising & Marketing",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Ramsay Santé",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Private Hospitals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "RATP",
+   "category": "State-Owned",
+   "industry": "Public Transport",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Rémy Cointreau",
+   "category": "French Listed Multinational",
+   "industry": "Spirits",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Renault",
+   "category": "French Listed Multinational",
+   "industry": "Automotive",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Rexel",
+   "category": "French Listed Multinational",
+   "industry": "Electrical Distribution",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Roche France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Pharmaceuticals",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Roquette",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Lestrem",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Rossignol",
+   "category": "Mid-Cap Multinational",
+   "industry": "Sporting Goods",
+   "city": "Saint-Jean-de-Moirans",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Roullier",
+   "category": "Private / Family Group",
+   "industry": "Agriculture & Chemicals",
+   "city": "Saint-Malo",
+   "region": "Bretagne"
+  },
+  {
+   "company": "Saint-Gobain",
+   "category": "French Listed Multinational",
+   "industry": "Construction Materials",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Salomon",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Sporting Goods",
+   "city": "Épagny Metz-Tessy",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Sanofi",
+   "category": "French Listed Multinational",
+   "industry": "Pharmaceuticals",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Sartorius Stedim Biotech",
+   "category": "French Listed Multinational",
+   "industry": "Biotech Equipment",
+   "city": "Aubagne",
+   "region": "Provence-Alpes-Côte d'Azur"
+  },
+  {
+   "company": "Savencia Fromage & Dairy",
+   "category": "Private / Family Group",
+   "industry": "Food Processing",
+   "city": "Viroflay",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Schneider Electric",
+   "category": "French Listed Multinational",
+   "industry": "Electrical Equipment",
+   "city": "Rueil-Malmaison",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "SCOR",
+   "category": "French Listed Multinational",
+   "industry": "Reinsurance",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "SEB Group",
+   "category": "French Listed Multinational",
+   "industry": "Small Appliances",
+   "city": "Écully",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Servier",
+   "category": "Private / Family Group",
+   "industry": "Pharmaceuticals",
+   "city": "Suresnes",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Siemens France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Industrial Technology",
+   "city": "Saint-Denis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Sisley",
+   "category": "Private / Family Group",
+   "industry": "Cosmetics",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "SNCF",
+   "category": "State-Owned",
+   "industry": "Transportation",
+   "city": "Saint-Denis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Société Générale",
+   "category": "French Listed Multinational",
+   "industry": "Banking",
+   "city": "Nanterre",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Sodexo",
+   "category": "French Listed Multinational",
+   "industry": "Facilities Management",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Sodiaal",
+   "category": "Cooperative / Mutual",
+   "industry": "Food Processing",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Soitec",
+   "category": "French Listed Multinational",
+   "industry": "Semiconductors",
+   "city": "Bernin",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Somfy",
+   "category": "Mid-Cap Multinational",
+   "industry": "Home Automation",
+   "city": "Cluses",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Sonoco France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Packaging",
+   "city": "Multiple Regions",
+   "region": "Multiple regions"
+  },
+  {
+   "company": "Sopra Steria",
+   "category": "French Listed Multinational",
+   "industry": "IT Services",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Spie",
+   "category": "French Listed Multinational",
+   "industry": "Engineering Services",
+   "city": "Cergy-Pontoise",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "STMicroelectronics France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Semiconductors",
+   "city": "Montrouge",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Système U",
+   "category": "Cooperative / Mutual",
+   "industry": "Retail",
+   "city": "Rungis",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Systra",
+   "category": "Subsidiary of French Group",
+   "industry": "Rail Engineering",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Tarkett",
+   "category": "French Listed Multinational",
+   "industry": "Flooring",
+   "city": "Courbevoie",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Technip Energies",
+   "category": "French Listed Multinational",
+   "industry": "Engineering / Energy",
+   "city": "Nanterre",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Teleperformance",
+   "category": "French Listed Multinational",
+   "industry": "Business Services",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Tereos",
+   "category": "Cooperative / Mutual",
+   "industry": "Sugar & Starch",
+   "city": "Moussy-le-Vieux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Terrena",
+   "category": "Cooperative / Mutual",
+   "industry": "Food / Agriculture",
+   "city": "Ancenis",
+   "region": "Pays de la Loire"
+  },
+  {
+   "company": "TF1",
+   "category": "French Listed Multinational",
+   "industry": "Media",
+   "city": "Boulogne-Billancourt",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Toyota Motor Manufacturing France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Automotive",
+   "city": "Onnaing",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Transdev",
+   "category": "State-Owned",
+   "industry": "Public Transport",
+   "city": "Issy-les-Moulineaux",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Trigano",
+   "category": "French Listed Multinational",
+   "industry": "Leisure Vehicles",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Ubisoft",
+   "category": "French Listed Multinational",
+   "industry": "Video Games",
+   "city": "Saint-Mandé",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Unibail-Rodamco-Westfield",
+   "category": "French Listed Multinational",
+   "industry": "Real Estate",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Unilever France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Consumer Goods",
+   "city": "Rueil-Malmaison",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Vallourec",
+   "category": "French Listed Multinational",
+   "industry": "Steel Tubes",
+   "city": "Meudon",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Veolia",
+   "category": "French Listed Multinational",
+   "industry": "Environmental Services",
+   "city": "Aubervilliers",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Vicat",
+   "category": "French Listed Multinational",
+   "industry": "Cement",
+   "city": "L'Isle-d'Abeau",
+   "region": "Auvergne-Rhône-Alpes"
+  },
+  {
+   "company": "Vinci",
+   "category": "French Listed Multinational",
+   "industry": "Construction",
+   "city": "Nanterre",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Vivendi",
+   "category": "French Listed Multinational",
+   "industry": "Media",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Vivescia",
+   "category": "Cooperative / Mutual",
+   "industry": "Grain & Malt",
+   "city": "Reims",
+   "region": "Grand Est"
+  },
+  {
+   "company": "Volkswagen Group France",
+   "category": "Foreign-Owned Subsidiary",
+   "industry": "Automotive",
+   "city": "Villers-Cotterêts",
+   "region": "Hauts-de-France"
+  },
+  {
+   "company": "Voltalia",
+   "category": "French Listed Multinational",
+   "industry": "Renewable Energy",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Wendel",
+   "category": "French Listed Multinational",
+   "industry": "Investment",
+   "city": "Paris",
+   "region": "Île-de-France"
+  },
+  {
+   "company": "Worldline",
+   "category": "French Listed Multinational",
+   "industry": "Payments",
+   "city": "Bezons",
+   "region": "Île-de-France"
+  }
+ ]
+}

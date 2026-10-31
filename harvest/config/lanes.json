@@ -1,0 +1,250 @@
+{
+ "_doc": "The eight lanes Prabhat can actually reach, derived from the 78 tailored variants in cv/variants/. Each lane lists the search phrases fired at every source. Keep phrases as an employer would title the job, never as a level ('junior', 'debutant' produce student contracts: harvest_rules.md).",
+ "demand_planning": {
+  "label": "Demand & supply planning",
+  "fr": [
+   "demand planner",
+   "supply planner",
+   "prévisionniste des ventes",
+   "planificateur supply chain",
+   "approvisionneur"
+  ],
+  "en": [
+   "demand planner",
+   "supply planner",
+   "S&OP analyst",
+   "inventory planner"
+  ]
+ },
+ "supply_chain_ops": {
+  "label": "Supply chain ops / procurement",
+  "fr": [
+   "analyste supply chain",
+   "coordinateur supply chain",
+   "acheteur approvisionneur",
+   "gestionnaire approvisionnement",
+   "pilote de flux"
+  ],
+  "en": [
+   "supply chain analyst",
+   "supply chain coordinator",
+   "buyer",
+   "logistics analyst"
+  ]
+ },
+ "erp_functional": {
+  "label": "ERP / functional consultant",
+  "fr": [
+   "consultant fonctionnel ERP",
+   "consultant Odoo",
+   "analyste fonctionnel",
+   "consultant SAP MM",
+   "key user SAP",
+   "consultant Business Central"
+  ],
+  "en": [
+   "ERP functional consultant",
+   "Odoo consultant",
+   "functional analyst",
+   "implementation consultant",
+   "ERP business analyst"
+  ]
+ },
+ "business_analyst": {
+  "label": "Business analyst / AMOA",
+  "fr": [
+   "business analyst",
+   "AMOA",
+   "analyste processus",
+   "chef de projet fonctionnel"
+  ],
+  "en": [
+   "business analyst",
+   "process analyst",
+   "operations analyst",
+   "business systems analyst"
+  ]
+ },
+ "data_analyst": {
+  "label": "Data / BI analyst",
+  "fr": [
+   "data analyst",
+   "analyste data",
+   "analyste Power BI",
+   "business intelligence analyst"
+  ],
+  "en": [
+   "data analyst",
+   "BI analyst",
+   "analytics engineer",
+   "reporting analyst"
+  ]
+ },
+ "ai_automation": {
+  "label": "AI / automation / no-code",
+  "fr": [
+   "consultant IA",
+   "automatisation IA",
+   "n8n",
+   "agent IA",
+   "consultant IA agentique",
+   "no-code"
+  ],
+  "en": [
+   "AI automation",
+   "AI agent",
+   "forward deployed engineer",
+   "deployment strategist",
+   "solutions engineer",
+   "implementation specialist",
+   "AI enablement",
+   "GTM engineer",
+   "revenue operations"
+  ]
+ },
+ "customer_service_adv": {
+  "label": "Customer service / ADV / order management",
+  "fr": [
+   "assistant ADV",
+   "gestionnaire ADV",
+   "chargé de relation client",
+   "customer service",
+   "gestionnaire commandes",
+   "sales support"
+  ],
+  "en": [
+   "customer service representative",
+   "order management",
+   "sales support",
+   "customer success"
+  ]
+ },
+ "it_support": {
+  "label": "IT / application support",
+  "fr": [
+   "technicien support informatique",
+   "support applicatif",
+   "technicien helpdesk",
+   "support ERP"
+  ],
+  "en": [
+   "IT support",
+   "application support",
+   "technical support engineer",
+   "cloud support",
+   "product support specialist"
+  ]
+ },
+ "operations_mgmt": {
+  "label": "Operations / business operations (62 CVs applied)",
+  "en": [
+   "operations specialist",
+   "business operations",
+   "operations coordinator",
+   "operations associate",
+   "program operations"
+  ],
+  "fr": [
+   "chargé d'opérations",
+   "coordinateur opérations",
+   "business operations",
+   "chargé de mission opérations"
+  ]
+ },
+ "customer_success": {
+  "label": "Customer success / account management (52 + 46 CVs)",
+  "en": [
+   "customer success manager",
+   "customer success specialist",
+   "customer onboarding",
+   "client success",
+   "account manager"
+  ],
+  "fr": [
+   "customer success manager",
+   "gestionnaire de comptes",
+   "chargé de compte",
+   "onboarding client"
+  ]
+ },
+ "commercial_ops": {
+  "label": "Sales / commercial operations and analysis (46 CVs)",
+  "en": [
+   "sales operations",
+   "commercial operations",
+   "sales analyst",
+   "commercial analyst",
+   "business development operations"
+  ],
+  "fr": [
+   "sales operations",
+   "opérations commerciales",
+   "analyste commercial",
+   "analyste performance commerciale"
+  ]
+ },
+ "procurement": {
+  "label": "Procurement / sourcing (31 CVs). 'category buyer', never 'category manager': rules.json rejects that title",
+  "en": [
+   "procurement analyst",
+   "sourcing analyst",
+   "purchasing specialist",
+   "category buyer",
+   "indirect buyer"
+  ],
+  "fr": [
+   "acheteur indirect",
+   "acheteur junior",
+   "chargé d'achats",
+   "analyste achats"
+  ]
+ },
+ "consulting_presales": {
+  "label": "Consulting / solutions / presales (28 CVs)",
+  "en": [
+   "solutions consultant",
+   "associate consultant",
+   "business consultant",
+   "presales consultant",
+   "customer solutions"
+  ],
+  "fr": [
+   "consultant junior",
+   "consultant avant-vente",
+   "consultant en organisation",
+   "consultant transformation"
+  ]
+ },
+ "merch_pricing": {
+  "label": "Merchandising / pricing / RGM (16 CVs, FMCG and retail via Ferrero)",
+  "en": [
+   "merchandising analyst",
+   "pricing analyst",
+   "assortment analyst",
+   "category analyst",
+   "revenue growth management"
+  ],
+  "fr": [
+   "analyste merchandising",
+   "analyste pricing",
+   "chargé de merchandising",
+   "analyste category"
+  ]
+ },
+ "product_project": {
+  "label": "Product ops / project coordination (14 + 9 CVs)",
+  "en": [
+   "product operations",
+   "product analyst",
+   "associate product manager",
+   "project coordinator",
+   "PMO analyst"
+  ],
+  "fr": [
+   "chargé de projet",
+   "chef de projet junior",
+   "coordinateur de projet",
+   "chef de produit junior"
+  ]
+ }
+}

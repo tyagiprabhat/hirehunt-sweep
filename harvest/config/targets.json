@@ -1,0 +1,38 @@
+{
+  "_doc": "Target employers from Target_Companies_Playbook_2026-07 (30 Jul 2026), minus the three former employers. 'ats' entries are enumerated directly through the ATS JSON API (highest-quality rows, own-ATS apply URLs). 'linkedin' entries are found by searching the company name on the LinkedIn guest API and keeping rows whose company matches. Slugs were confirmed live on 2026-09-15; never guess a slug, derive it from the careers page redirect.",
+
+  "ats": [
+    {"company": "Alan",          "type": "ashby",          "slug": "alan",       "tier": 1},
+    {"company": "Dust",          "type": "ashby",          "slug": "dust",       "tier": 1},
+    {"company": "Pennylane",     "type": "ashby",          "slug": "pennylane",  "tier": 2},
+    {"company": "Mistral AI",    "type": "ashby",          "slug": "mistral.ai", "tier": 3},
+    {"company": "Hexa",          "type": "ashby",          "slug": "hexa",       "tier": 3},
+    {"company": "Legora",        "type": "ashby",          "slug": "legora",     "tier": 3},
+    {"company": "Doctolib",      "type": "greenhouse",     "slug": "doctolib",   "tier": 3},
+    {"company": "Mirakl",        "type": "greenhouse",     "slug": "mirakl",     "tier": 1},
+    {"company": "Datadog",       "type": "greenhouse",     "slug": "datadog",    "tier": 3},
+    {"company": "Contentsquare", "type": "greenhouse",     "slug": "contentsquare", "tier": 3},
+    {"company": "Back Market",   "type": "greenhouse",     "slug": "backmarket", "tier": 3},
+    {"company": "Samsara",       "type": "greenhouse",     "slug": "samsara",    "tier": 3},
+    {"company": "Shippeo",       "type": "smartrecruiters","slug": "Shippeo",    "tier": 2},
+    {"company": "SMCP",          "type": "smartrecruiters","slug": "SMCP",       "tier": 2}
+  ],
+
+  "linkedin": [
+    {"company": "Scalizer", "tier": 1}, {"company": "Smile", "tier": 1}, {"company": "Keyrus", "tier": 1},
+    {"company": "Amazon", "tier": 1}, {"company": "Circana", "tier": 1}, {"company": "Odoo", "tier": 1},
+    {"company": "Captivea", "tier": 1},
+    {"company": "Carrier", "tier": 2}, {"company": "Qonto", "tier": 2}, {"company": "Swan", "tier": 2},
+    {"company": "Pelico", "tier": 2}, {"company": "Qobra", "tier": 2}, {"company": "Payflows", "tier": 2},
+    {"company": "Veepee", "tier": 2}, {"company": "Hager", "tier": 2}, {"company": "Safran", "tier": 2},
+    {"company": "mc2i", "tier": 2}, {"company": "Objectware", "tier": 2}, {"company": "Sephora", "tier": 2},
+    {"company": "L'Occitane", "tier": 2}, {"company": "Valeo", "tier": 2}, {"company": "Hertz", "tier": 2},
+    {"company": "Alstom", "tier": 2}, {"company": "Cegid", "tier": 2}, {"company": "Niji", "tier": 3},
+    {"company": "Saegus", "tier": 3}, {"company": "VISEO", "tier": 3}, {"company": "Air Liquide", "tier": 3},
+    {"company": "Thales", "tier": 3}, {"company": "TotalEnergies", "tier": 3}, {"company": "Accor", "tier": 3},
+    {"company": "NVIDIA", "tier": 3}, {"company": "Salesforce", "tier": 3}, {"company": "Michelin", "tier": 2},
+    {"company": "McCain", "tier": 2}, {"company": "Lokad", "tier": 2}, {"company": "Puratos", "tier": 2}
+  ],
+
+  "amazon_jobs": {"enabled": true, "queries": ["supply chain analyst", "operations analyst", "business analyst", "program manager"], "location": "France"}
+}
