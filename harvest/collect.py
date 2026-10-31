@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Collect, filter, dedupe and verify. Zero LLM tokens.
 
-    python harvest/collect.py [--region idf|exidf|all|france|directory] [--tag NAME] [--limit N] [--lanes a,b,c] [--quick]
+    python harvest/collect.py [--region idf|exidf|all|france|directory|fresh] [--tag NAME] [--limit N] [--lanes a,b,c] [--quick]
 
 Writes harvest/out/<date>/candidates.json (everything, with verdicts) and judge_input.jsonl
 (only the rows that need a human-grade judgment, trimmed to what the judge needs). The judge is
@@ -57,6 +57,7 @@ IDF_LOC = "Paris, Île-de-France, France"   # "Île-de-France, France" alone ret
 # as its own location. IDF is left out: it has its own sweep and is the densest pool.
 LIMIT = 0
 FRANCE_SCOPED = False
+FRESH_HOURS = 3   # the hourly hunter looks back 3 h, so one missed or late run loses nothing
 FRANCE_REGIONS = ["Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Bretagne", "Centre-Val de Loire",
                   "Grand Est", "Hauts-de-France", "Normandie", "Nouvelle-Aquitaine", "Occitanie",
                   "Pays de la Loire", "Provence-Alpes-Côte d'Azur", "Corse"]
@@ -180,6 +181,10 @@ def region_of(location):
         return "IDF"
     if any(k in loc for k in RULES["tgv_commute_cities"]):
         return "TGV commute"
+    # Kept, not abroad (Prabh, 2026-10-31: "Include, flag sponsorship"): the judge flags each one
+    # for a sponsorship check and ranks it below an equal French job.
+    if " luxembourg " in loc.replace(",", " "):
+        return "Luxembourg"
     if any(k in loc for k in FOREIGN):
         return "Abroad"
     if any(k in loc for k in FRENCH_CITIES) or re.search(r"(?:^|[\s(,])\d{2}(?:[\s),]|$)", loc.replace(" - ", " ")):
@@ -263,6 +268,22 @@ def collect(regions, lanes, quick):
         # Collection used to print nothing until it returned, so a slow sweep and a hung one
         # looked identical from outside. Now every query says so as it lands.
         print("  %s  (total %d)" % (line, len(cands)), flush=True)
+
+    if "fresh" in regions:
+        # The hourly hunter (harvest/HUNT.md): every lane phrase, one page, only postings from the
+        # last FRESH_HOURS, across France and Luxembourg. LinkedIn only: the guest API is the one
+        # source that filters by the hour. Small enough to run every hour without a throttle.
+        hours = FRESH_HOURS / 24
+        for lane in lanes:
+            spec = LANES[lane]
+            for ph in spec["fr"] + spec["en"]:
+                rows = sources.linkedin_search(ph, "France", hours, 1)
+                for r in rows:
+                    tag_france(r)
+                add(rows, lane, "LinkedIn France %dh '%s'" % (FRESH_HOURS, ph))
+            for ph in spec["en"]:
+                add(sources.linkedin_search(ph, "Luxembourg", hours, 1), lane, "LinkedIn Luxembourg %dh '%s'" % (FRESH_HOURS, ph))
+        return cands, log
 
     if "directory" in regions:
         # One company at a time: a bare name search, then the name with the role words that are
@@ -426,7 +447,7 @@ def classify(c):
     c["wants_english"] = bool(EN_REQUIRED.search(body))
     # The four buckets asked for on 2026-09-28. A French-language posting only earns a bucket
     # when it also asks for English; French-only postings are kept but parked in "FR only".
-    zone = "IDF" if c["region"] in ("IDF", "TGV commute") else "ex-IDF"
+    zone = "IDF" if c["region"] in ("IDF", "TGV commute") else "Luxembourg" if c["region"] == "Luxembourg" else "ex-IDF"
     if c["lang"] == "en":
         c["bucket"] = zone + " / EN"
     elif c["wants_english"]:
@@ -456,7 +477,7 @@ def post_lang(body):
 # --------------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--region", default="all", choices=["idf", "exidf", "all", "france", "directory"])
+    ap.add_argument("--region", default="all", choices=["idf", "exidf", "all", "france", "directory", "fresh"])
     ap.add_argument("--tag", default="", help="suffix for the output folder, so a second run on the same day cannot overwrite the first")
     ap.add_argument("--lanes", default=",".join(LANES.keys()))
     ap.add_argument("--limit", type=int, default=0, help="directory mode: only the first N companies, for a smoke test")
@@ -467,11 +488,12 @@ def main():
     # "france" is the whole country in one LinkedIn search per English phrase, not IDF plus six
     # named cities. It always gets its own folder: a same-day run into harvest/out/<date> would
     # overwrite the raw.json that fill_postings.py and the published sheet were built from.
-    tag = a.tag or {"france": "france_en", "directory": "directory"}.get(a.region, "")
+    tag = a.tag or {"france": "france_en", "directory": "directory",
+                    "fresh": "fresh_" + dt.datetime.now(dt.timezone.utc).strftime("%H%M")}.get(a.region, "")
     lanes = [x for x in a.lanes.split(",") if x in LANES]
     global LIMIT, FRANCE_SCOPED
     LIMIT = a.limit
-    FRANCE_SCOPED = a.region in ("france", "directory")
+    FRANCE_SCOPED = a.region in ("france", "directory", "fresh")
 
     out_dir = os.path.join(ROOT, "harvest", "out", TODAY.isoformat() + ("_" + tag if tag else ""))
     os.makedirs(out_dir, exist_ok=True)

@@ -79,7 +79,7 @@ def linkedin_search(keywords, location, days=7, pages=2):
     """Guest API. Real job IDs, an ISO posted date per card, and the mint band for free."""
     out, seen = [], set()
     for start in range(0, pages * 10, 10):
-        url = LI_SEARCH % (urllib.parse.quote(keywords), urllib.parse.quote(location), days * 86400, start)
+        url = LI_SEARCH % (urllib.parse.quote(keywords), urllib.parse.quote(location), int(days * 86400), start)
         status, body, _ = get(url)
         if status != 200 or not body.strip():
             break

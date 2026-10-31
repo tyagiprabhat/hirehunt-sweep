@@ -22,7 +22,7 @@ on:
         default: false
 
 concurrency:
-  group: daily-sweep
+  group: linkedin   # one LinkedIn sweep at a time: the nightly sweep and the hourly hunter share it
   cancel-in-progress: false
 
 permissions:

@@ -1,0 +1,53 @@
+# The hourly hunter (harvest/HUNT.md in the private repo): France and Luxembourg postings from the
+# last 3 hours, pushed to the Worker unjudged (hidden until the night judge), and added to branch
+# fresh-latest for that judge. Free: a public repo's Actions minutes cost nothing. No LLM here.
+name: Hourly hunter
+
+on:
+  schedule:
+    - cron: "23 4-23 * * *"   # 04:23 to 23:23 UTC; the nightly full sweep has 00:17 to ~02:30
+  workflow_dispatch:
+
+concurrency:
+  group: linkedin   # never two LinkedIn sweeps at once (shared with daily-sweep.yml)
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # the fresh-latest hand-off branch
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      HARVEST_API: https://hirehunt.iprabhattyagi.workers.dev
+      HARVEST_TOKEN: ${{ secrets.HARVEST_TOKEN }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Collect the last 3 hours (no LLM tokens)
+        run: python harvest/collect.py --region fresh
+      - name: Find this run's folder
+        run: echo "OUT=$(ls -d harvest/out/*/ | sort | tail -1)" >> "$GITHUB_ENV"
+      - name: Send to the Worker (unjudged)
+        run: python harvest/push.py "$OUT"
+      # Rolling two days of hourly runs, one orphan commit force-pushed, so the branch never grows.
+      - name: Add the run to branch fresh-latest
+        run: |
+          dir=$(basename "$OUT")
+          repo="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir -p /tmp/fresh && cd /tmp/fresh && git init -q -b fresh-latest
+          if git fetch -q --depth 1 "$repo" fresh-latest 2>/dev/null; then git checkout -q FETCH_HEAD -- . 2>/dev/null || true; fi
+          cutoff=$(date -u -d '2 days ago' +%F)
+          for d in */; do [ -d "$d" ] && [[ "${d:0:10}" < "$cutoff" ]] && rm -rf "$d"; done
+          mkdir -p "$dir"
+          gzip -c "$GITHUB_WORKSPACE/$OUT/candidates.json" > "$dir/candidates.json.gz"
+          cp "$GITHUB_WORKSPACE/$OUT/judge_input.jsonl" "$dir/"
+          git add -A
+          git -c user.name=hunter -c user.email=hunter@users.noreply.github.com commit -q -m "fresh $dir"
+          git push -q -f "$repo" fresh-latest

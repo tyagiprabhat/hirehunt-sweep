@@ -55,6 +55,11 @@ def push(day, rows):
     return n
 
 
+def hunt(picks):
+    """Set the Top 10 tab: [{id, rank, plan}], ids from pull(). Returns {"picked", "at"}."""
+    return _call("POST", "/api/harvest/hunt", {"picks": picks})
+
+
 def pull(since):
     """Postings the Worker has seen on or after `since` (YYYY-MM-DD), killed rows left out."""
     return _call("GET", "/api/harvest/postings?since=" + since)

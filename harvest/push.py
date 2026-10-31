@@ -164,6 +164,8 @@ def details(c):
     lang = "" if not lang else "EN" if lang == "en" else "FR+EN" if c.get("wants_english") else "FR"
     flags = [s for s in c.get("senior_soft") or []]
     flags += [name for name, rx in FLAGS_RX if rx.search(text)]
+    if c.get("region") == "Luxembourg":   # Prabh, 2026-10-31: include Luxembourg, flag sponsorship
+        flags.append("sponsorship check (Luxembourg)")
     if seniority in ("Mid-Senior", "Director", "Executive"):
         flags.append(seniority + " level")
     return {"salary": label, "salary_k": k, "years": years_of(text), "seniority": seniority,
@@ -187,6 +189,10 @@ def row(c, tier, fit, v=None):
             "contract": contract, "tier": tier, "fit": fit, "level": v.get("level") or "",
             "source": c.get("source") or "", "posted": c.get("posted") or "",
             "applicants": a if isinstance(a, int) else None, **d}
+
+
+# The morning the order was made, not the sweep's date: one order can mix sweeps (Today shows the newest).
+RANK_DAY = __import__("datetime").date.today().isoformat()
 
 
 def main():
@@ -226,7 +232,7 @@ def main():
         rows.append(row(c, v.get("tier", "unjudged"), "%s | %s" % (fit, appl_str(c)), v))
         r = ranks.get(c["id"])
         if r:
-            rows[-1].update(rank=r["rank"], rank_day=day, plan=str(r.get("plan") or "")[:300])
+            rows[-1].update(rank=r["rank"], rank_day=RANK_DAY, plan=str(r.get("plan") or "")[:300])
     for k in data["killed"]:
         if str(k.get("why") or "").startswith(FETCHED_KILLS):
             rows.append(row(k, "killed", k["why"]))
