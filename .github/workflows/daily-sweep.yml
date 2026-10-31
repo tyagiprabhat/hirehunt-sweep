@@ -10,7 +10,7 @@ name: Daily job sweep
 
 on:
   schedule:
-    - cron: "30 1 * * *"   # 01:30 UTC (02:30 / 03:30 Paris): all of France takes up to ~3 h, done before the 7:00 list
+    - cron: "17 0 * * *"   # 00:17 UTC (01:17 / 02:17 Paris), off the busy top of the hour; ~2 h, done long before the 05:45 judge
   workflow_dispatch:
     inputs:
       region:
