@@ -324,8 +324,8 @@ def collect(regions, lanes, quick):
                 r["extra"]["target_tier"] = 1
             cands.extend(rows)
             note("amazon.jobs '%s'" % q, rows, cands, log)
-    for t in TARGETS["linkedin"]:
-        rows = [r for r in sources.linkedin_search(t["company"], "France", 14, 1)
+    for t in TARGETS["linkedin"] + TARGETS.get("linkedin_lists", []):
+        rows = [r for r in sources.linkedin_search(t["company"], "France", 14, 2 if t["tier"] == 1 else 1)
                 if norm_company(r["company"]) == norm_company(t["company"]) or same_company(r["company"], t["company"])]
         for r in rows:
             tag_france(r)
