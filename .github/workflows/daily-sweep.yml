@@ -10,7 +10,7 @@ name: Daily job sweep
 
 on:
   schedule:
-    - cron: "17 0 * * *"   # 00:17 UTC (01:17 / 02:17 Paris), off the busy top of the hour; ~2 h, done long before the 05:45 judge
+    - cron: "17 0 * * *"   # 00:17 UTC (01:17 / 02:17 Paris), off the busy top of the hour; two parallel collectors of ~3 h each
   workflow_dispatch:
     inputs:
       region:
@@ -29,9 +29,40 @@ permissions:
   contents: write   # the sweep-latest hand-off branch
 
 jobs:
-  sweep:
+  # Two collectors in parallel, each on its own runner and IP: the target companies (~800 name
+  # searches and 97 careers boards) and the lane phrases. Together they are over GitHub's 6 h job
+  # limit; apart each fits. Each keeps only its raw rows; the finish job merges, verifies and pushes.
+  collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [companies, lanes]
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Collect ${{ matrix.part }} (no LLM tokens)
+        run: >
+          python harvest/collect.py --region "${{ inputs.region || 'all' }}" --part ${{ matrix.part }}
+          --raw-only --tag ${{ matrix.part }} ${{ inputs.quick && '--quick' || '' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ matrix.part }}
+          path: harvest/out/*_${{ matrix.part }}/raw.json
+          retention-days: 2
+
+  sweep:
+    needs: collect
+    if: ${{ !cancelled() }}   # one collector failing still sends the other's rows
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
     env:
       HARVEST_API: https://hirehunt.iprabhattyagi.workers.dev   # the live Worker (renamed from cv-builder, 2026-10-22)
       HARVEST_TOKEN: ${{ secrets.HARVEST_TOKEN }}
@@ -46,12 +77,15 @@ jobs:
       # Seconds, not the six minutes of a collect, to learn the two token secrets disagree.
       - name: Check the Worker accepts the token
         run: python -c "import sys; sys.path.insert(0, 'harvest'); import remote; assert remote.enabled(), 'HARVEST_API or HARVEST_TOKEN secret missing'; print(len(remote.seen()), 'postings and applications already known')"
-      - name: Collect (no LLM tokens)
-        run: >
-          python harvest/collect.py --region "${{ inputs.region || 'all' }}"
-          ${{ inputs.quick && '--quick' || '' }}
-      - name: Find this run's folder
-        run: echo "OUT=$(ls -d harvest/out/*/ | sort | tail -1)" >> "$GITHUB_ENV"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: raw-*
+          path: raw
+      - name: Merge, dedupe, verify (no LLM tokens)
+        run: |
+          ls raw/*/raw.json
+          python harvest/collect.py --region "${{ inputs.region || 'all' }}" --from-raw raw/*/raw.json
+          echo "OUT=harvest/out/$(date -u +%F)" >> "$GITHUB_ENV"
       - name: Send to the Worker
         run: python harvest/push.py "$OUT"
       # The 7:00 Claude Code session (harvest/MORNING.md) judges and ranks from this. One orphan commit,

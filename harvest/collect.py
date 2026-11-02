@@ -57,6 +57,7 @@ IDF_LOC = "Paris, Île-de-France, France"   # "Île-de-France, France" alone ret
 # as its own location. IDF is left out: it has its own sweep and is the densest pool.
 LIMIT = 0
 FRANCE_SCOPED = False
+PART = "both"   # --part: companies | lanes | both
 FRESH_HOURS = 3   # the hourly hunter looks back 3 h, so one missed or late run loses nothing
 FRANCE_REGIONS = ["Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Bretagne", "Centre-Val de Loire",
                   "Grand Est", "Hauts-de-France", "Normandie", "Nouvelle-Aquitaine", "Occitanie",
@@ -308,15 +309,17 @@ def collect(regions, lanes, quick):
             print("  %s  (total %d)" % (line, len(cands)), flush=True)
         return cands, log
 
-    # target employers: own ATS boards enumerated in full, then judged like any other row
-    for t in TARGETS["ats"]:
+    # target employers: own ATS boards enumerated in full, then judged like any other row.
+    # --part splits the nightly sweep in two parallel jobs (companies / lanes): together they are
+    # over GitHub's 6 h job limit, apart each fits. Default "both" is the old single run.
+    for t in (TARGETS["ats"] if PART != "lanes" else []):
         rows = sources.ATS[t["type"]](t["slug"], t["company"])
         for r in rows:
             r["lane"] = "target"
             r["extra"]["target_tier"] = t["tier"]
         cands.extend(rows)
         note("ATS %s/%s" % (t["type"], t["slug"]), rows, cands, log)
-    if TARGETS.get("amazon_jobs", {}).get("enabled"):
+    if PART != "lanes" and TARGETS.get("amazon_jobs", {}).get("enabled"):
         for q in TARGETS["amazon_jobs"]["queries"]:
             rows = sources.amazon_jobs(q, TARGETS["amazon_jobs"]["location"])
             for r in rows:
@@ -324,7 +327,14 @@ def collect(regions, lanes, quick):
                 r["extra"]["target_tier"] = 1
             cands.extend(rows)
             note("amazon.jobs '%s'" % q, rows, cands, log)
-    for t in TARGETS["linkedin"] + TARGETS.get("linkedin_lists", []):
+    # The directory's well-known groups were only searched by --region directory, which nothing
+    # schedules, so the nightly sweep never saw them. Each is now one name search here too, once.
+    done = set()
+    for t in ([] if PART == "lanes" else TARGETS["linkedin"] + TARGETS.get("linkedin_lists", []) + [
+            {"company": c["company"], "tier": 3} for c in DIRECTORY]):
+        if core_name(t["company"]) in done:
+            continue
+        done.add(core_name(t["company"]))
         rows = [r for r in sources.linkedin_search(t["company"], "France", 14, 2 if t["tier"] == 1 else 1)
                 if norm_company(r["company"]) == norm_company(t["company"]) or same_company(r["company"], t["company"])]
         for r in rows:
@@ -333,6 +343,8 @@ def collect(regions, lanes, quick):
             r["extra"]["target_tier"] = t["tier"]
         cands.extend(rows)
         note("LinkedIn target '%s'" % t["company"], rows, cands, log)
+    if PART == "companies":
+        return cands, log
 
     for lane in lanes:
         spec = LANES[lane]
@@ -348,8 +360,21 @@ def collect(regions, lanes, quick):
             if "idf" in regions:
                 add(sources.linkedin_search(ph, IDF_LOC, RULES["freshness_days"], pages), lane, "LinkedIn IDF '%s'" % ph)
             if "exidf" in regions:
-                for city in (EXIDF_CITIES[:4] if quick else EXIDF_CITIES[:6]):
-                    add(sources.linkedin_search(ph, city + ", France", RULES["freshness_days"], 1), lane, "LinkedIn %s '%s'" % (city, ph))
+                # Rest of France is two passes. English phrases cover every mainland region plus
+                # Luxembourg (border jobs, kept with a sponsorship flag as in the hunter), because the
+                # six-city pass found too few English postings outside Paris. Prabh, 2026-11-02: "why so
+                # less english opportunites ... either IDF or rest of roles including border roles".
+                # French phrases stay on the big cities to keep the sweep inside its time limit.
+                if ph in spec["en"]:
+                    for reg_name in (FRANCE_REGIONS[:3] if quick else FRANCE_REGIONS[:-1]):   # [:-1] drops Corse
+                        rows = sources.linkedin_search(ph, reg_name + ", France", RULES["freshness_days"], 1)
+                        for r in rows:
+                            tag_france(r)   # small towns no city list names would read as Unknown
+                        add(rows, lane, "LinkedIn %s '%s'" % (reg_name, ph))
+                    add(sources.linkedin_search(ph, "Luxembourg", RULES["freshness_days"], 1), lane, "LinkedIn Luxembourg '%s'" % ph)
+                else:
+                    for city in (EXIDF_CITIES[:4] if quick else EXIDF_CITIES[:6]):
+                        add(sources.linkedin_search(ph, city + ", France", RULES["freshness_days"], 1), lane, "LinkedIn %s '%s'" % (city, ph))
         # HelloWork / France Travail / APEC: French phrases only, they are French boards
         for ph in ([] if "france" in regions else spec["fr"][:2 if quick else 3]):
             for reg in regions:
@@ -364,7 +389,7 @@ def collect(regions, lanes, quick):
 
 # --------------------------------------------------------------------------- filter + verify
 RELEVANT = re.compile(
-    r"analy|planner|planif|planning|buyer|acheteur|approvision|supply|logisti|procurement|achats|ERP|Odoo|SAP|consultant|"
+    r"analy|planner|planif|planning|buyer|acheteu|approvision|supply|logisti|procurement|purchas|sourcing|achat|pricing|tarif|revenue|category|cat[ée]gor|ERP|Odoo|SAP|consultant|"
     r"support|op[ée]rations|ops\b|customer|client|order|commande|ADV|implementation|d[ée]ploiement|deployment|solutions?\b|"
     r"revops|revenue op|enablement|automation|automatisation|\bIA\b|\bAI\b|no.?code|coordinat|project|projet|process|"
     r"pre.?sales|avant.?vente|sales engineer|"
@@ -493,7 +518,9 @@ def main():
     ap.add_argument("--lanes", default=",".join(LANES.keys()))
     ap.add_argument("--limit", type=int, default=0, help="directory mode: only the first N companies, for a smoke test")
     ap.add_argument("--quick", action="store_true", help="fewer phrases and pages, for a smoke test")
-    ap.add_argument("--from-raw", metavar="PATH", help="reuse a previous run's raw.json instead of re-collecting")
+    ap.add_argument("--from-raw", metavar="PATH", nargs="+", help="reuse previous runs' raw.json (several are merged) instead of re-collecting")
+    ap.add_argument("--part", default="both", choices=["both", "companies", "lanes"], help="collect only the target companies or only the lane phrases")
+    ap.add_argument("--raw-only", action="store_true", help="stop after raw.json, for a parallel job whose rows a later --from-raw merges")
     a = ap.parse_args()
     regions = ["idf", "exidf"] if a.region == "all" else [a.region]
     # "france" is the whole country in one LinkedIn search per English phrase, not IDF plus six
@@ -502,8 +529,9 @@ def main():
     tag = a.tag or {"france": "france_en", "directory": "directory",
                     "fresh": "fresh_" + dt.datetime.now(dt.timezone.utc).strftime("%H%M")}.get(a.region, "")
     lanes = [x for x in a.lanes.split(",") if x in LANES]
-    global LIMIT, FRANCE_SCOPED
+    global LIMIT, FRANCE_SCOPED, PART
     LIMIT = a.limit
+    PART = a.part
     FRANCE_SCOPED = a.region in ("france", "directory", "fresh")
 
     out_dir = os.path.join(ROOT, "harvest", "out", TODAY.isoformat() + ("_" + tag if tag else ""))
@@ -511,9 +539,12 @@ def main():
     t0 = time.time()
 
     if a.from_raw:
-        raw = json.load(open(a.from_raw, encoding="utf-8"))
-        cands, log = raw["candidates"], raw["queries"]
-        print("reused %d raw rows from %s" % (len(cands), a.from_raw))
+        cands, log = [], []
+        for path in a.from_raw:
+            raw = json.load(open(path, encoding="utf-8"))
+            cands += raw["candidates"]
+            log += raw["queries"]
+        print("reused %d raw rows from %s" % (len(cands), ", ".join(a.from_raw)))
     else:
         cands, log = collect(regions, lanes, a.quick)
         print("collected %d raw rows from %d queries in %.0fs" % (len(cands), len(log), time.time() - t0))
@@ -523,6 +554,8 @@ def main():
                   open(os.path.join(out_dir, "raw.json"), "w", encoding="utf-8"),
                   ensure_ascii=False)
         print("-> raw.json saved (%d rows)" % len(cands))
+        if a.raw_only:
+            return
 
     seen = Seen()
     print("dedup index: %d urls, %d company+title pairs already seen" % seen.loaded)

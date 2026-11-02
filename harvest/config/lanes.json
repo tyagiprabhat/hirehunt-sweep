@@ -1,5 +1,5 @@
 {
- "_doc": "The eight lanes Prabhat can actually reach, derived from the 78 tailored variants in cv/variants/. Each lane lists the search phrases fired at every source. Keep phrases as an employer would title the job, never as a level ('junior', 'debutant' produce student contracts: harvest_rules.md).",
+ "_doc": "The eight lanes Prabhat can actually reach, derived from the 78 tailored variants in cv/variants/. Each lane lists the search phrases fired at every source. Keep phrases as an employer would title the job, never as a level ('junior', 'debutant' produce student contracts: harvest_rules.md). Entry-level phrases ('junior buyer', 'supply chain junior', 'junior pricing analyst') were added 2026-11-02 for procurement, supply chain, planning and pricing: stage, alternance and VIE titles are still rejected by rules.json, so 'junior' no longer pulls student contracts. Prabh, 2026-11-02: 'very less ops are coming for supply chain, buyer, junior buyer, procurement analysis, pricing - we should be targetting all kind of entry roles too'.",
  "demand_planning": {
   "label": "Demand & supply planning",
   "fr": [
@@ -7,13 +7,17 @@
    "supply planner",
    "prévisionniste des ventes",
    "planificateur supply chain",
-   "approvisionneur"
+   "approvisionneur",
+   "planificateur",
+   "gestionnaire de stocks"
   ],
   "en": [
    "demand planner",
    "supply planner",
    "S&OP analyst",
-   "inventory planner"
+   "inventory planner",
+   "junior planner",
+   "production planner"
   ]
  },
  "supply_chain_ops": {
@@ -23,13 +27,21 @@
    "coordinateur supply chain",
    "acheteur approvisionneur",
    "gestionnaire approvisionnement",
-   "pilote de flux"
+   "pilote de flux",
+   "chargé supply chain",
+   "gestionnaire supply chain",
+   "ingénieur supply chain",
+   "supply chain junior"
   ],
   "en": [
    "supply chain analyst",
    "supply chain coordinator",
    "buyer",
-   "logistics analyst"
+   "logistics analyst",
+   "junior supply chain",
+   "supply chain specialist",
+   "supply chain engineer",
+   "logistics coordinator"
   ]
  },
  "erp_functional": {
@@ -190,13 +202,25 @@
    "sourcing analyst",
    "purchasing specialist",
    "category buyer",
-   "indirect buyer"
+   "indirect buyer",
+   "junior buyer",
+   "buyer",
+   "purchasing analyst",
+   "procurement specialist",
+   "procurement coordinator",
+   "sourcing specialist",
+   "spend analyst"
   ],
   "fr": [
    "acheteur indirect",
    "acheteur junior",
    "chargé d'achats",
-   "analyste achats"
+   "analyste achats",
+   "acheteur",
+   "acheteur projet",
+   "acheteur industriel",
+   "gestionnaire achats",
+   "chargé d'approvisionnement"
   ]
  },
  "consulting_presales": {
@@ -222,13 +246,20 @@
    "pricing analyst",
    "assortment analyst",
    "category analyst",
-   "revenue growth management"
+   "revenue growth management",
+   "junior pricing analyst",
+   "pricing specialist",
+   "revenue manager",
+   "deal pricing"
   ],
   "fr": [
    "analyste merchandising",
    "analyste pricing",
    "chargé de merchandising",
-   "analyste category"
+   "analyste category",
+   "chargé de pricing",
+   "revenue manager junior",
+   "analyste tarification"
   ]
  },
  "product_project": {
