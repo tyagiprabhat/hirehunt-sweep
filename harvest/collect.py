@@ -371,11 +371,22 @@ RELEVANT = re.compile(
     r"data|\bBI\b|reporting|inventory|stock|demand|S&OP|forecast|pr[ée]vision|business|program", re.I)
 
 
+def clearance_employer(company):
+    """rules.json exclude_clearance_employers: a folded substring, or '=name' for the whole core name."""
+    f, core = fold(company), core_name(company)
+    for x in RULES.get("exclude_clearance_employers", []):
+        if (core == x[1:].replace(" ", "")) if x.startswith("=") else (x in f):
+            return True
+    return False
+
+
 def cheap_filter(c):
     c["title"] = re.sub(r"\s+", " ", c["title"] or "").strip()
     c["company"] = re.sub(r"\s+", " ", c["company"] or "").strip()
     if any(x in fold(c["company"]) for x in RULES["exclude_employers"]):
         return "excluded employer"
+    if clearance_employer(c["company"]):
+        return "clearance employer (defence/nuclear/state)"
     if c["lane"] == "target":
         reg = region_of(c["location"])
         if reg in ("Abroad", "Remote abroad", "Unknown"):

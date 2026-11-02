@@ -37,20 +37,6 @@
    "region": "Île-de-France"
   },
   {
-   "company": "Airbus",
-   "category": "French Listed Multinational",
-   "industry": "Aerospace",
-   "city": "Blagnac",
-   "region": "Occitanie"
-  },
-  {
-   "company": "Airbus Helicopters",
-   "category": "Subsidiary of French Group",
-   "industry": "Aerospace",
-   "city": "Marignane",
-   "region": "Provence-Alpes-Côte d'Azur"
-  },
-  {
    "company": "Alcatel-Lucent Enterprise",
    "category": "Foreign-Owned Subsidiary",
    "industry": "Telecom Equipment",
@@ -104,13 +90,6 @@
    "category": "Foreign-Owned Subsidiary",
    "industry": "Steel Manufacturing",
    "city": "Saint-Denis",
-   "region": "Île-de-France"
-  },
-  {
-   "company": "ArianeGroup",
-   "category": "Foreign-Owned Subsidiary",
-   "industry": "Space & Defence",
-   "city": "Issy-les-Moulineaux",
    "region": "Île-de-France"
   },
   {
@@ -471,13 +450,6 @@
    "region": "Île-de-France"
   },
   {
-   "company": "Dassault Aviation",
-   "category": "French Listed Multinational",
-   "industry": "Aerospace & Defense",
-   "city": "Paris",
-   "region": "Île-de-France"
-  },
-  {
    "company": "Dassault Systèmes",
    "category": "French Listed Multinational",
    "industry": "Software",
@@ -671,13 +643,6 @@
    "category": "French Listed Multinational",
    "industry": "Automotive Parts",
    "city": "Nanterre",
-   "region": "Île-de-France"
-  },
-  {
-   "company": "Framatome",
-   "category": "Subsidiary of French Group",
-   "industry": "Nuclear",
-   "city": "Courbevoie",
    "region": "Île-de-France"
   },
   {
@@ -954,13 +919,6 @@
    "region": "Île-de-France"
   },
   {
-   "company": "KNDS France",
-   "category": "Foreign-Owned Subsidiary",
-   "industry": "Land Defence",
-   "city": "Versailles",
-   "region": "Île-de-France"
-  },
-  {
    "company": "L'Oréal",
    "category": "French Listed Multinational",
    "industry": "Consumer Goods / Cosmetics",
@@ -1108,13 +1066,6 @@
    "region": "Pays de la Loire"
   },
   {
-   "company": "MBDA France",
-   "category": "Foreign-Owned Subsidiary",
-   "industry": "Missiles / Defence",
-   "city": "Le Plessis-Robinson",
-   "region": "Île-de-France"
-  },
-  {
    "company": "McDonald's France",
    "category": "Foreign-Owned Subsidiary",
    "industry": "Food Service",
@@ -1174,13 +1125,6 @@
    "company": "Natixis",
    "category": "Subsidiary of French Group",
    "industry": "Banking",
-   "city": "Paris",
-   "region": "Île-de-France"
-  },
-  {
-   "company": "Naval Group",
-   "category": "State-Owned",
-   "industry": "Naval Defence",
    "city": "Paris",
    "region": "Île-de-France"
   },
@@ -1245,13 +1189,6 @@
    "category": "Foreign-Owned Subsidiary",
    "industry": "Beverages",
    "city": "Levallois-Perret",
-   "region": "Île-de-France"
-  },
-  {
-   "company": "Orano",
-   "category": "State-Owned",
-   "industry": "Nuclear Fuel Cycle",
-   "city": "Châtillon",
    "region": "Île-de-France"
   },
   {
