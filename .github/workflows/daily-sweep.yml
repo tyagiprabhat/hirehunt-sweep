@@ -83,8 +83,11 @@ jobs:
           path: raw
       - name: Merge, dedupe, verify (no LLM tokens)
         run: |
-          ls raw/*/raw.json
-          python harvest/collect.py --region "${{ inputs.region || 'all' }}" --from-raw raw/*/raw.json
+          # upload-artifact keeps the folder after the wildcard, so the depth varies: find them.
+          files=$(find raw -name raw.json | sort)
+          echo "$files"
+          test -n "$files"
+          python harvest/collect.py --region "${{ inputs.region || 'all' }}" --from-raw $files
           echo "OUT=harvest/out/$(date -u +%F)" >> "$GITHUB_ENV"
       - name: Send to the Worker
         run: python harvest/push.py "$OUT"
